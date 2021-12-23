@@ -75,7 +75,8 @@ class Monday():
         temp_body = request_body.copy()
         for i in additional_parameters:
             wildcard = '{{' + i + '}}'
-            temp_body['query'] = temp_body['query'].replace(wildcard, str(additional_parameters[i]))
+            temp_body['query'] = temp_body['query'].replace(
+                wildcard, str(additional_parameters[i]))
 
         return temp_body
 
@@ -96,7 +97,8 @@ class Monday():
 
         while iterator:
 
-            logging.info(f'Processing [{endpoint}] - Page {pagination_parameters["page"]}')
+            logging.info(
+                f'Processing [{endpoint}] - Page {pagination_parameters["page"]}')
 
             request_body = self._construct_query(body, pagination_parameters)
 

@@ -3,8 +3,8 @@ import json
 import pandas as pd
 
 
-# with open('/code/src/mapping_parser/mapping.json') as f:
-with open('mapping_parser/mapping.json') as f:
+with open('/code/src/mapping_parser/mapping.json') as f:
+    # with open('mapping_parser/mapping.json') as f:
     MAPPING = json.load(f)
 
 

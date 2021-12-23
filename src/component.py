@@ -2,7 +2,6 @@
 kds-team.ex-monday
 
 '''
-import sys
 import logging
 import dateparser
 
@@ -75,8 +74,10 @@ class Component(ComponentBase):
                 raise UserException(
                     '[From Date] cannot exceed [To Date]')
 
-            additional_parameters_out['from_date'] = from_date_form.strftime("%Y-%m-%d")
-            additional_parameters_out['to_date'] = to_date_form.strftime("%Y-%m-%d")
+            additional_parameters_out['from_date'] = from_date_form.strftime(
+                "%Y-%m-%d")
+            additional_parameters_out['to_date'] = to_date_form.strftime(
+                "%Y-%m-%d")
 
         elif endpoint == 'boards':
             state = additional_parameters.get('state')
@@ -116,7 +117,8 @@ class Component(ComponentBase):
                 additional_parameters[i] = params[i]
 
         # Validate user inputs and adjust parameters if necessary
-        additional_parameters = self.validate_input_parameters(params, additional_parameters)
+        additional_parameters = self.validate_input_parameters(
+            params, additional_parameters)
 
         # Monday request client
         monday_client = Monday(api_token=api_token)
