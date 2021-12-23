@@ -1,0 +1,300 @@
+{
+    "data": {
+        "boards": [
+            {
+                "id": "2057237369",
+                "name": "testest",
+                "workspace_id": null,
+                "workspace": null,
+                "owner": {
+                    "id": 26145064,
+                    "name": "leo"
+                },
+                "state": "active",
+                "board_folder_id": null,
+                "board_kind": "public",
+                "communication": null,
+                "description": null,
+                "permissions": "everyone",
+                "pos": "32768",
+                "subscribers": [
+                    {
+                        "id": 26145064
+                    }
+                ],
+                "tags": [],
+                "top_group": {
+                    "id": "topics"
+                },
+                "updated_at": "2021-12-21T18:31:36Z",
+                "groups": [
+                    {
+                        "id": "topics",
+                        "title": "Group Title",
+                        "archived": null,
+                        "color": "#579bfc",
+                        "deleted": null,
+                        "position": "65536"
+                    },
+                    {
+                        "id": "group_title",
+                        "title": "Group Title",
+                        "archived": null,
+                        "color": "#a25ddc",
+                        "deleted": null,
+                        "position": "98304"
+                    }
+                ],
+                "columns": [
+                    {
+                        "id": "name",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Name",
+                        "type": "name",
+                        "width": 400
+                    },
+                    {
+                        "id": "person",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Person",
+                        "type": "multiple-person",
+                        "width": null
+                    },
+                    {
+                        "id": "status",
+                        "archived": false,
+                        "settings_str": "{\"labels\":{\"0\":\"Working on it\",\"1\":\"Done\",\"2\":\"Stuck\"},\"labels_positions_v2\":{\"0\":0,\"1\":2,\"2\":1,\"5\":3},\"labels_colors\":{\"0\":{\"color\":\"#fdab3d\",\"border\":\"#E99729\",\"var_name\":\"orange\"},\"1\":{\"color\":\"#00c875\",\"border\":\"#00B461\",\"var_name\":\"green-shadow\"},\"2\":{\"color\":\"#e2445c\",\"border\":\"#CE3048\",\"var_name\":\"red-shadow\"}}}",
+                        "title": "Status",
+                        "type": "color",
+                        "width": null
+                    },
+                    {
+                        "id": "date4",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Date",
+                        "type": "date",
+                        "width": null
+                    }
+                ]
+            },
+            {
+                "id": "2057206595",
+                "name": "Subitems of TEST",
+                "workspace_id": null,
+                "workspace": null,
+                "owner": {
+                    "id": 26145064,
+                    "name": "leo"
+                },
+                "state": "active",
+                "board_folder_id": null,
+                "board_kind": "public",
+                "communication": null,
+                "description": null,
+                "permissions": "everyone",
+                "pos": "65536.0",
+                "subscribers": [
+                    {
+                        "id": 26145064
+                    }
+                ],
+                "tags": [],
+                "top_group": {
+                    "id": "subitems_of_596368986"
+                },
+                "updated_at": "2021-12-21T18:23:16Z",
+                "groups": [
+                    {
+                        "id": "subitems_of_596368986",
+                        "title": "Subitems",
+                        "archived": null,
+                        "color": "#a25ddc",
+                        "deleted": null,
+                        "position": "32768.0"
+                    },
+                    {
+                        "id": "topics",
+                        "title": "Subitems",
+                        "archived": null,
+                        "color": "#579bfc",
+                        "deleted": null,
+                        "position": "65536"
+                    }
+                ],
+                "columns": [
+                    {
+                        "id": "name",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Name",
+                        "type": "name",
+                        "width": 300
+                    },
+                    {
+                        "id": "person",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Owner",
+                        "type": "multiple-person",
+                        "width": 98
+                    },
+                    {
+                        "id": "status",
+                        "archived": false,
+                        "settings_str": "{\"done_colors\":[1],\"hide_footer\":true,\"labels\":{\"0\":\"Working on it\",\"1\":\"Done\",\"2\":\"Stuck\"},\"labels_positions_v2\":{\"0\":1,\"1\":2,\"2\":0,\"3\":3,\"4\":4,\"5\":9,\"6\":5,\"8\":6,\"9\":7,\"10\":8},\"labels_colors\":{\"0\":{\"color\":\"#fdab3d\",\"border\":\"#E99729\",\"var_name\":\"orange\"},\"1\":{\"color\":\"#00c875\",\"border\":\"#00B461\",\"var_name\":\"green-shadow\"},\"2\":{\"color\":\"#e2445c\",\"border\":\"#CE3048\",\"var_name\":\"red-shadow\"}}}",
+                        "title": "Status",
+                        "type": "color",
+                        "width": 136
+                    },
+                    {
+                        "id": "date0",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Date",
+                        "type": "date",
+                        "width": 140
+                    }
+                ]
+            },
+            {
+                "id": "2057206572",
+                "name": "TEST",
+                "workspace_id": null,
+                "workspace": null,
+                "owner": {
+                    "id": 26145064,
+                    "name": "leo"
+                },
+                "state": "active",
+                "board_folder_id": null,
+                "board_kind": "public",
+                "communication": null,
+                "description": "The essence of this board is to provide a high-level overview of your project. This is the place to plan and track your progress. \nFor more information and a full explanation of how to use this template check out this video:\n https://www.youtube.com/watch?v=ug5TyvMd-3Y&feature=youtu.be",
+                "permissions": "everyone",
+                "pos": "16896.11215209961",
+                "subscribers": [
+                    {
+                        "id": 26145064
+                    }
+                ],
+                "tags": [],
+                "top_group": {
+                    "id": "new_group88144"
+                },
+                "updated_at": "2021-12-21T18:23:31Z",
+                "groups": [
+                    {
+                        "id": "new_group88144",
+                        "title": "More information about this template:",
+                        "archived": false,
+                        "color": "#333333",
+                        "deleted": false,
+                        "position": "65344"
+                    },
+                    {
+                        "id": "new_group29179",
+                        "title": "Planning",
+                        "archived": null,
+                        "color": "#00c875",
+                        "deleted": null,
+                        "position": "65472.0"
+                    },
+                    {
+                        "id": "new_group43041",
+                        "title": "Execution",
+                        "archived": null,
+                        "color": "#fdab3d",
+                        "deleted": null,
+                        "position": "98208"
+                    },
+                    {
+                        "id": "topics",
+                        "title": "Launch",
+                        "archived": null,
+                        "color": "#037f4c",
+                        "deleted": null,
+                        "position": "130944"
+                    },
+                    {
+                        "id": "duplicate_of_project_a",
+                        "title": "Monitoring",
+                        "archived": null,
+                        "color": "#0086c0",
+                        "deleted": null,
+                        "position": "131072.0"
+                    }
+                ],
+                "columns": [
+                    {
+                        "id": "name",
+                        "archived": false,
+                        "settings_str": "{}",
+                        "title": "Name",
+                        "type": "name",
+                        "width": 240
+                    },
+                    {
+                        "id": "people0",
+                        "archived": false,
+                        "settings_str": "{\"max_people_allowed\":\"0\"}",
+                        "title": "Owner",
+                        "type": "multiple-person",
+                        "width": null
+                    },
+                    {
+                        "id": "subitems",
+                        "archived": false,
+                        "settings_str": "{\"allowMultipleItems\":true,\"itemTypeName\":\"column.subtasks.title\",\"displayType\":\"BOARD_INLINE\",\"boardIds\":[2057206595],\"boardId\":1135346987}",
+                        "title": "Subitems",
+                        "type": "subtasks",
+                        "width": null
+                    },
+                    {
+                        "id": "status",
+                        "archived": false,
+                        "settings_str": "{\"done_colors\":[1],\"color_mapping\":{\"4\":19,\"8\":11,\"11\":8,\"19\":4},\"labels\":{\"0\":\"Working on it\",\"1\":\"Done\",\"2\":\"Stuck\",\"3\":\"Planned\",\"4\":\"Up next\",\"6\":\"Ready for review\",\"7\":\"Future steps\",\"9\":\"On hold\"},\"labels_positions_v2\":{\"0\":0,\"1\":1,\"2\":2,\"3\":4,\"4\":5,\"5\":8,\"6\":6,\"7\":3,\"9\":7},\"labels_colors\":{\"0\":{\"color\":\"#fdab3d\",\"border\":\"#E99729\",\"var_name\":\"orange\"},\"1\":{\"color\":\"#00c875\",\"border\":\"#00B461\",\"var_name\":\"green-shadow\"},\"2\":{\"color\":\"#e2445c\",\"border\":\"#CE3048\",\"var_name\":\"red-shadow\"},\"3\":{\"color\":\"#0086c0\",\"border\":\"#3DB0DF\",\"var_name\":\"blue-links\"},\"4\":{\"color\":\"#FF642E\",\"border\":\"#E05828\",\"var_name\":\"dark-orange\"},\"6\":{\"color\":\"#037f4c\",\"border\":\"#006B38\",\"var_name\":\"grass-green\"},\"7\":{\"color\":\"#579bfc\",\"border\":\"#4387E8\",\"var_name\":\"bright-blue\"},\"9\":{\"color\":\"#FFCB00\",\"border\":\"#C0AB1B\",\"var_name\":\"yellow\"}}}",
+                        "title": "Status",
+                        "type": "color",
+                        "width": 106
+                    },
+                    {
+                        "id": "status_13",
+                        "archived": false,
+                        "settings_str": "{\"done_colors\":[1],\"hide_footer\":true,\"color_mapping\":{\"0\":3,\"1\":107,\"2\":16,\"3\":0,\"16\":2,\"107\":1},\"labels\":{\"0\":\"Medium\",\"1\":\"High\",\"2\":\"Low\"},\"labels_colors\":{\"0\":{\"color\":\"#0086c0\",\"border\":\"#3DB0DF\",\"var_name\":\"blue-links\"},\"1\":{\"color\":\"#225091\",\"border\":\"#225091\",\"var_name\":\"navy\"},\"2\":{\"color\":\"#66CCFF\",\"border\":\"#5AB3E0\",\"var_name\":\"turquoise\"}}}",
+                        "title": "Priority",
+                        "type": "color",
+                        "width": null
+                    },
+                    {
+                        "id": "timeline",
+                        "archived": false,
+                        "settings_str": "{\"hide_footer\":false}",
+                        "title": "Timeline",
+                        "type": "timerange",
+                        "width": null
+                    },
+                    {
+                        "id": "labor_budget_spent",
+                        "archived": false,
+                        "settings_str": "{\"unit\":{\"symbol\":\"$\",\"custom_unit\":\"\",\"direction\":\"left\"}}",
+                        "title": "Cost",
+                        "type": "numeric",
+                        "width": 112
+                    },
+                    {
+                        "id": "files",
+                        "archived": false,
+                        "settings_str": "{\"hide_footer\":false}",
+                        "title": "Related Assets",
+                        "type": "file",
+                        "width": null
+                    }
+                ]
+            }
+        ]
+    },
+    "account_id": 10499375
+}

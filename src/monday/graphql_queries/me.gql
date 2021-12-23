@@ -1,0 +1,8 @@
+query {
+  me {
+    is_guest
+    created_at
+    name
+    id
+    }
+}

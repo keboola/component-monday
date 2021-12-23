@@ -1,0 +1,20 @@
+query {
+    updates (limit: {{limit}}, page:{{page}}) {
+        body
+        id
+    created_at
+    creator {
+      id
+    }
+    replies {
+      id
+      creator_id
+      created_at
+      text_body
+      updated_at
+      body
+    }
+    text_body
+    updated_at
+  }
+}

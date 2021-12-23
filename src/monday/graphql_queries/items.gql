@@ -1,0 +1,29 @@
+query {
+    items (limit: {{limit}}, page: {{page}}) {
+      	board {
+      	  id
+      	}
+        name
+      	created_at
+      	creator {
+      	  id
+      	}
+      creator_id
+      group {
+        id
+      }
+      id
+      name
+      parent_item {
+        id
+      }
+      state
+      subscribers {
+        id
+      }
+      updated_at
+      updates {
+        id
+      }
+    }
+}

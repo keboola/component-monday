@@ -1,0 +1,312 @@
+{
+    "activity_logs": {
+        "activity_logs": {
+            "type": "table",
+            "destination": "activity_logs",
+            "tableMapping": {
+                "parent_id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "board_id",
+                        "primaryKey": true
+                    }
+                },
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "primaryKey": true
+                    }
+                },
+                "created_at": "created_at",
+                "entity": "entity",
+                "user_id": "user_id",
+                "event": "event",
+                "data": "data"
+            }
+        }
+    },
+    "boards": {
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "id",
+                "primaryKey": true
+            }
+        },
+        "name": "name",
+        "workspace_id": "workspace_id",
+        "workspace": {
+            "type": "table",
+            "destination": "workspace",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "primaryKey": true
+                    }
+                },
+                "name": "name",
+                "kind": "kind",
+                "description": "description"
+            }
+        },
+        "owner.id": "owner_id",
+        "owner.name": "owner_name",
+        "state": "state",
+        "board_folder_id": "board_folder_id",
+        "board_kind": "board_kind",
+        "communication": "communication",
+        "description": "description",
+        "permissions": "permissions",
+        "pos": "pos",
+        "subscribers": {
+            "type": "table",
+            "destination": "boards_subscribers",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "primaryKey": true
+                    }
+                },
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "board_id",
+                        "primaryKey": true
+                    }
+                }
+            }
+        },
+        "tags": {
+            "type": "table",
+            "destination": "boards_tags",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "primaryKey": true
+                    }
+                },
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "board_id",
+                        "primaryKey": true
+                    }
+                }
+            }
+        },
+        "top_group.id": "top_group_id",
+        "updated_at": "updated_at",
+        "groups": {
+            "type": "table",
+            "destination": "boards_groups",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "primaryKey": true
+                    }
+                },
+                "title": "title",
+                "archived": "archived",
+                "color": "color",
+                "deleted": "deleted",
+                "position": "position",
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "board_id",
+                        "primaryKey": true
+                    }
+                }
+            }
+        },
+        "columns": {
+            "type": "table",
+            "destination": "boards_columns",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "priamryKey": true
+                    }
+                },
+                "archived": "archived",
+                "settings_str": "settings_str",
+                "title": "title",
+                "type": "type",
+                "width": "width",
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "board_id",
+                        "primaryKey": true
+                    }
+                }
+            }
+        }
+    },
+    "items": {
+        "board.id": "board_id",
+        "name": "name",
+        "created_at": "created_at",
+        "creator": "creator",
+        "creator_id": "creator_id",
+        "group.id": "group_id",
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "id",
+                "priamryKey": true
+            }
+        },
+        "parent_item.id": "parent_item_id",
+        "state": "state",
+        "subscribers": {
+            "type": "table",
+            "destination": "items_subscribers",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "priamryKey": true
+                    }
+                },
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "item_id",
+                        "priamryKey": true
+                    }
+                }
+            }
+        },
+        "updated_at": "updated_at",
+        "updates": {
+            "type": "table",
+            "destination": "items_updates",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "priamryKey": true
+                    }
+                },
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "item_id",
+                        "priamryKey": true
+                    }
+                }
+            }
+        }
+    },
+    "tags": {
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "id",
+                "priamryKey": true
+            }
+        },
+        "name": "name",
+        "color": "color"
+    },
+    "teams": {
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "id",
+                "priamryKey": true
+            }
+        },
+        "name": "name",
+        "picture_url": "picture_url",
+        "users.id": "user_id"
+    },
+    "updates": {
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "id",
+                "primaryKey": true
+            }
+        },
+        "body": "body",
+        "created_at": "created_at",
+        "creator.id": "creator_id",
+        "replies": {
+            "type": "table",
+            "destination": "updates_replies",
+            "tableMapping": {
+                "id": {
+                    "type": "column",
+                    "mapping": {
+                        "destination": "id",
+                        "primaryKey": true
+                    }
+                },
+                "parent_id": {
+                    "type": "user",
+                    "mapping": {
+                        "destination": "update_id",
+                        "primaryKey": true
+                    }
+                },
+                "creator_id": "creator_id",
+                "created_at": "created_at",
+                "text_body": "text_body",
+                "updated_at": "updated_at",
+                "body": "body"
+            }
+        },
+        "text_body": "text_body",
+        "updated_at": "updated_at"
+    },
+    "users": {
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "id",
+                "primaryKey": true
+            }
+        },
+        "created_at": "created_at",
+        "email": "email",
+        "account.name": "account_name",
+        "account.id": "account_id",
+        "birthday": "birthday",
+        "country_code": "country_code",
+        "join_date": "join_date",
+        "enabled": "enabled",
+        "is_admin": "is_admin",
+        "is_guest": "is_guest",
+        "is_pending": "is_pending",
+        "is_view_only": "is_view_only",
+        "is_verified": "is_verified",
+        "location": "location",
+        "mobile_phone": "mobile_phone",
+        "name": "name",
+        "photo": "photo",
+        "photo_original": "photo_original",
+        "photo_small": "photo_small",
+        "photo_thumb": "photo_thumb",
+        "photo_thumb_small": "photo_thumb_small",
+        "photo_tiny": "photo_tiny",
+        "time_zone_identifier": "time_zone_identifier",
+        "title": "title",
+        "url": "url",
+        "utc_hours_diff": "utc_hours_diff"
+    }
+}

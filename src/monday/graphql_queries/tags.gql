@@ -1,0 +1,7 @@
+query {
+    tags {
+        id
+      	name
+      	color
+    }
+}

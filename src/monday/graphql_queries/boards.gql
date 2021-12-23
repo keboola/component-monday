@@ -1,0 +1,50 @@
+query {
+  boards (limit: {{limit}}, page: {{page}}, board_kind: {{board_kind}}){
+    id
+    name
+    workspace_id
+    workspace {
+        id
+        name
+        kind
+        description
+    }
+    owner {
+      id
+      name
+    }
+    state
+    board_folder_id
+    board_kind
+    communication
+    description
+    permissions
+    pos
+    subscribers {
+      id
+    }
+    tags {
+      id
+    }
+    top_group {
+      id
+    }
+    updated_at
+    groups {
+      id
+      title
+      archived
+      color
+      deleted
+      position
+    }
+    columns {
+      id
+      archived
+      settings_str
+      title
+      type
+      width
+    }
+  }
+}

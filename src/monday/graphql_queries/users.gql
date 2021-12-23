@@ -1,0 +1,33 @@
+query {
+    users {
+      id
+        created_at
+        email
+        account {
+            name
+            id
+        }
+      birthday
+      country_code
+      join_date
+      enabled
+      is_admin
+      is_guest
+      is_pending
+      is_view_only
+      is_verified
+      location
+      mobile_phone
+      name
+      phone
+      photo_original
+      photo_small
+      photo_thumb
+      photo_thumb_small
+      photo_tiny
+			time_zone_identifier
+      title
+      url
+      utc_hours_diff
+    }
+}

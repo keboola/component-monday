@@ -1,0 +1,10 @@
+query {
+    teams {
+        id
+        name
+        picture_url
+        users {
+            id
+        }
+    }
+}

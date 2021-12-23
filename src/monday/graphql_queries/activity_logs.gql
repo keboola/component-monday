@@ -1,0 +1,13 @@
+query {
+  boards {
+    id
+    activity_logs (from: "{{from_date}}T00:00:00Z", to: "{{to_date}}T00:00:00Z", limit: {{limit}}, page:{{page}}) {
+      id
+      created_at
+      entity
+      user_id
+      event
+      data
+    }
+  }
+}

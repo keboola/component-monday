@@ -1,0 +1,87 @@
+{
+    "type": "object",
+    "title": "Row Configuration",
+    "required": [
+        "endpoint",
+        "incrementalLoad"
+    ],
+    "properties": {
+        "endpoint": {
+            "type": "string",
+            "title": "Endpoint",
+            "enum": [
+                "activity_logs",
+                "boards",
+                "items",
+                "tags",
+                "teams",
+                "updates",
+                "users"
+            ],
+            "default": "boards",
+            "propertyOrder": 100
+        },
+        "incrementalLoad": {
+            "type": "boolean",
+            "title": "Incremental Load",
+            "default": true,
+            "propertyOrder": 200
+        },
+        "from_date": {
+            "type": "string",
+            "title": "From Date",
+            "options": {
+                "dependencies": {
+                    "endpoint": "activity_logs"
+                }
+            },
+            "description": "[Required] - Example: 2021-01-01, 1 day ago, 2 weeks ago",
+            "propertyOrder": 300
+        },
+        "to_date": {
+            "type": "string",
+            "title": "To Date",
+            "options": {
+                "dependencies": {
+                    "endpoint": "activity_logs"
+                }
+            },
+            "description": "[Required] - Example: 2021-01-01, 1 day ago, 2 weeks ago",
+            "propertyOrder": 400
+        },
+        "board_kind": {
+            "title": "The board's kind",
+            "type": "string",
+            "enum": [
+                "public",
+                "private",
+                "share"
+            ],
+            "options": {
+                "dependencies": {
+                    "endpoint": "boards"
+                }
+            },
+            "default": "public",
+            "propertyOrder": 500
+        },
+        "state": {
+            "title": "State",
+            "description": "The state of the board",
+            "type": "string",
+            "enum": [
+                "all",
+                "active",
+                "archived",
+                "deleted"
+            ],
+            "options": {
+                "dependencies": {
+                    "endpoint": "boards"
+                }
+            },
+            "default": "active",
+            "propertyOrder": 600
+        }
+    }
+}
