@@ -12,7 +12,7 @@ from monday.client import Monday
 from mapping_parser.parser import MappingParser
 
 # configuration variables
-KEY_API_TOKEN = '#api_token'
+KEY_API_TOKEN = '#api_key'
 KEY_ENDPOINT = 'endpoint'
 KEY_INCREMENTAL = 'incrementalLoad'
 
