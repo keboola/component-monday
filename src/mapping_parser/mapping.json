@@ -1,11 +1,18 @@
 {
     "activity_logs": {
+        "id": {
+            "type": "column",
+            "mapping": {
+                "destination": "board_id",
+                "primaryKey": true
+            }
+        },
         "activity_logs": {
             "type": "table",
-            "destination": "activity_logs",
+            "destination": "activity_logs_details",
             "tableMapping": {
                 "parent_id": {
-                    "type": "column",
+                    "type": "user",
                     "mapping": {
                         "destination": "board_id",
                         "primaryKey": true
