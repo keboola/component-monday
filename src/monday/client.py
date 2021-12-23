@@ -1,6 +1,9 @@
+import os
 import logging
 import json
 import requests
+
+# DIR_PATH = os.path.join(os.path.basename(os.getcwd()),'monday')
 
 MONDAY_URL = 'https://api.monday.com/v2'
 
@@ -61,7 +64,8 @@ class Monday():
     def fetch_query(endpoint):
 
         # fetching graphql query
-        graphql_filename = f'monday/graphql_queries/{endpoint}.gql'
+        # graphql_filename = f'monday/graphql_queries/{endpoint}.gql'
+        graphql_filename = f'/code/src/monday/graphql_queries/{endpoint}.gql'
         with open(graphql_filename, 'r') as f:
             graphql_query = {
                 'query': f.read()

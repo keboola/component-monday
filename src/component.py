@@ -2,6 +2,8 @@
 kds-team.ex-monday
 
 '''
+import os
+import sys
 import logging
 import dateparser
 

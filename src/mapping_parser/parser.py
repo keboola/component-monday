@@ -3,8 +3,10 @@ import json
 import pandas as pd
 
 
+# DIR_PATH = os.path.join(os.path.basename(os.getcwd()),'mapping_parser')
+# mapping_source = os.path.join(DIR_PATH, 'mapping.json')
+# with open('mapping_parser/mapping.json') as f:
 with open('/code/src/mapping_parser/mapping.json') as f:
-    # with open('mapping_parser/mapping.json') as f:
     MAPPING = json.load(f)
 
 
