@@ -57,6 +57,9 @@ class Monday():
             data=json.dumps(body)
         )
 
+        if r.status_code != 200:
+            raise Exception(f"Request failed with status code {r.status_code}. Response content: {r.text}")
+
         return r.json()
 
     @staticmethod

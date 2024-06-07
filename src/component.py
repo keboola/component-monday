@@ -63,12 +63,12 @@ class Component(ComponentBase):
             from_date = additional_parameters.get('from_date')
             to_date = additional_parameters.get('to_date')
 
+            if not from_date or not to_date:
+                raise UserException('[From Date] and [To Date] is required for activity_logs endpoint.')
+
             from_date_form = dateparser.parse(from_date)
             to_date_form = dateparser.parse(to_date)
             day_diff = (to_date_form-from_date_form).days
-
-            if not from_date or not to_date:
-                raise UserException('[From Date] and [To Date] is required.')
 
             if day_diff < 0:
                 raise UserException(
