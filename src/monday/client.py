@@ -95,7 +95,7 @@ class Monday():
         # query parameters
         pagination_parameters = {
             'page': 1,
-            'limit': 1
+            'limit': 25
         }
         if additional_parameters:
             for i in additional_parameters:
