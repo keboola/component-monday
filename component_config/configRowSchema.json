@@ -12,7 +12,6 @@
             "enum": [
                 "activity_logs",
                 "boards",
-                "items",
                 "tags",
                 "teams",
                 "updates",

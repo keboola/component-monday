@@ -19,7 +19,6 @@ query {
     communication
     description
     permissions
-    pos
     subscribers {
       id
     }
