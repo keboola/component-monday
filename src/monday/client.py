@@ -57,6 +57,9 @@ class Monday():
             data=json.dumps(body)
         )
 
+        if r.status_code != 200:
+            raise Exception(f"Request failed with status code {r.status_code}. Response content: {r.text}")
+
         return r.json()
 
     @staticmethod
@@ -92,7 +95,7 @@ class Monday():
         # query parameters
         pagination_parameters = {
             'page': 1,
-            'limit': 1
+            'limit': 200
         }
         if additional_parameters:
             for i in additional_parameters:
@@ -105,10 +108,14 @@ class Monday():
 
             request_body = self._construct_query(body, pagination_parameters)
 
+            logging.debug(f"request_body: {request_body}")
+
             data_in = self.post_request(
                 url=MONDAY_URL,
                 api_token=self.API_TOKEN,
                 body=request_body)
+
+            logging.debug(f"Response: {data_in}")
 
             endpoint_data_in = MappingParser._fetch_value(
                 data_in,

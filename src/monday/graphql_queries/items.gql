@@ -1,5 +1,5 @@
 query {
-    items (limit: {{limit}}, page: {{page}}) {
+    items_page {
       	board {
       	  id
       	}

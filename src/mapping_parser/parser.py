@@ -23,15 +23,14 @@ class MappingParser():
         primary_key = []
 
         # Countermeasures for response coming in as DICT
-        if type(endpoint_data) == dict:
+        if isinstance(endpoint_data, dict):
             endpoint_data = [endpoint_data]
 
         for row in endpoint_data:
             row_json = {}
 
             for m in self.mapping:
-                col_type = self.mapping[m].get('type') if type(
-                    self.mapping[m]) != str else 'string'
+                col_type = self.mapping[m].get('type') if not isinstance(self.mapping[m], str) else 'string'
 
                 if col_type == 'string':
                     key = self.mapping[m]
