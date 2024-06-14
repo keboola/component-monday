@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 
-
 # DIR_PATH = os.path.join(os.path.basename(os.getcwd()),'mapping_parser')
 # mapping_source = os.path.join(DIR_PATH, 'mapping.json')
 # with open('mapping_parser/mapping.json') as f:
@@ -10,7 +9,7 @@ with open('/code/src/mapping_parser/mapping.json') as f:
     MAPPING = json.load(f)
 
 
-class MappingParser():
+class MappingParser:
     def __init__(self, destination, endpoint, incremental=False, mapping=None):
 
         self.destination = destination
@@ -34,13 +33,13 @@ class MappingParser():
 
                 if col_type == 'string':
                     key = self.mapping[m]
-                    value = self._fetch_value(row=row, key=m)
+                    value = self.fetch_value(row=row, key=m)
                     row_json[key] = value
 
                 elif col_type == 'column' or not col_type:
                     key = self.mapping[m]['mapping']['destination']
                     # value = row[m]
-                    value = self._fetch_value(row=row, key=m)
+                    value = self.fetch_value(row=row, key=m)
                     row_json[key] = value
 
                     # Primary key for incremental load
@@ -60,18 +59,18 @@ class MappingParser():
                     endpoint = self.mapping[m]['destination']
                     mapping = self.mapping[m]['tableMapping']
                     parent_key = row['id']
-                    data = self._fetch_value(row=row, key=m)
+                    data = self.fetch_value(row=row, key=m)
                     # Failsafe for entities which are empty are do not have values
                     data = [] if not data else data
 
-                    tableParser = MappingParser(
+                    table_parser = MappingParser(
                         destination=self.destination,
                         endpoint=endpoint,
                         mapping=mapping,
                         incremental=self.incremental
                     )
-                    tableParser.parse(endpoint_data=data,
-                                      parent_key=parent_key)
+                    table_parser.parse(endpoint_data=data,
+                                       parent_key=parent_key)
 
             output.append(row_json)
 
@@ -82,10 +81,10 @@ class MappingParser():
                          primary_key=primary_key)
 
     @staticmethod
-    def _fetch_value(row, key):
-        '''
+    def fetch_value(row, key):
+        """
         Fetching value from a nested object
-        '''
+        """
         key_list = key.split('.')
         value = row
 
