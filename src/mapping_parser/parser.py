@@ -63,13 +63,13 @@ class MappingParser:
                     # Failsafe for entities which are empty are do not have values
                     data = [] if not data else data
 
-                    tableParser = MappingParser(
+                    table_parser = MappingParser(
                         destination=self.destination,
                         endpoint=endpoint,
                         mapping=mapping,
                         incremental=self.incremental
                     )
-                    tableParser.parse(endpoint_data=data,
+                    table_parser.parse(endpoint_data=data,
                                       parent_key=parent_key)
 
             output.append(row_json)

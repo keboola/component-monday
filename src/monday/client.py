@@ -76,7 +76,8 @@ class Monday:
 
         return graphql_query
 
-    def _construct_query(self, request_body, additional_parameters):
+    @staticmethod
+    def _construct_query(request_body, additional_parameters):
 
         temp_body = request_body.copy()
         for i in additional_parameters:

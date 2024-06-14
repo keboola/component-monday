@@ -1,7 +1,7 @@
-'''
+"""
 kds-team.ex-monday
+"""
 
-'''
 import logging
 import dateparser
 
@@ -40,7 +40,8 @@ class Component(ComponentBase):
     def __init__(self):
         super().__init__()
 
-    def validate_input_parameters(self, params, additional_parameters):
+    @staticmethod
+    def validate_input_parameters(params, additional_parameters):
 
         additional_parameters_out = additional_parameters.copy()
 
@@ -48,7 +49,7 @@ class Component(ComponentBase):
         if params == {}:
             raise UserException('Component is not configured.')
 
-        # 2 - check if api token is enter
+        # 2 - check if api token is entered
         api_token = params.get(KEY_API_TOKEN)
         if not api_token:
             raise UserException('API token is not set.')
@@ -58,7 +59,7 @@ class Component(ComponentBase):
         if not endpoint:
             raise UserException('Endpoint is not set.')
 
-        # 4 - check additional parmeters for specific endpoints
+        # 4 - check additional parameters for specific endpoints
         if endpoint == 'activity_logs':
             from_date = additional_parameters.get('from_date')
             to_date = additional_parameters.get('to_date')
@@ -68,7 +69,7 @@ class Component(ComponentBase):
 
             from_date_form = dateparser.parse(from_date)
             to_date_form = dateparser.parse(to_date)
-            day_diff = (to_date_form-from_date_form).days
+            day_diff = (to_date_form - from_date_form).days
 
             if day_diff < 0:
                 raise UserException(
@@ -100,9 +101,9 @@ class Component(ComponentBase):
         return additional_parameters_out
 
     def run(self):
-        '''
+        """
         Main execution code
-        '''
+        """
 
         # User input parameters
         params = self.configuration.parameters
@@ -124,14 +125,14 @@ class Component(ComponentBase):
         monday_client = Monday(api_token=api_token)
 
         # Mapping parser client
-        endpointParser = MappingParser(
+        endpoint_parser = MappingParser(
             destination=self.tables_out_path,
             endpoint=endpoint,
             incremental=incremental)
 
         monday_client.fetch(
             endpoint=endpoint,
-            MappingParser=endpointParser,
+            mapping_parser=endpoint_parser,
             additional_parameters=additional_parameters)
 
 
