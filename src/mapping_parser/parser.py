@@ -70,7 +70,7 @@ class MappingParser:
                         incremental=self.incremental
                     )
                     table_parser.parse(endpoint_data=data,
-                                      parent_key=parent_key)
+                                       parent_key=parent_key)
 
             output.append(row_json)
 
