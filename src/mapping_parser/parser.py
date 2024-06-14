@@ -33,13 +33,13 @@ class MappingParser:
 
                 if col_type == 'string':
                     key = self.mapping[m]
-                    value = self._fetch_value(row=row, key=m)
+                    value = self.fetch_value(row=row, key=m)
                     row_json[key] = value
 
                 elif col_type == 'column' or not col_type:
                     key = self.mapping[m]['mapping']['destination']
                     # value = row[m]
-                    value = self._fetch_value(row=row, key=m)
+                    value = self.fetch_value(row=row, key=m)
                     row_json[key] = value
 
                     # Primary key for incremental load
@@ -59,7 +59,7 @@ class MappingParser:
                     endpoint = self.mapping[m]['destination']
                     mapping = self.mapping[m]['tableMapping']
                     parent_key = row['id']
-                    data = self._fetch_value(row=row, key=m)
+                    data = self.fetch_value(row=row, key=m)
                     # Failsafe for entities which are empty are do not have values
                     data = [] if not data else data
 
@@ -81,7 +81,7 @@ class MappingParser:
                          primary_key=primary_key)
 
     @staticmethod
-    def _fetch_value(row, key):
+    def fetch_value(row, key):
         """
         Fetching value from a nested object
         """
@@ -96,9 +96,6 @@ class MappingParser:
             value = ''
 
         return value
-
-    def fetch_value(self, row, key):
-        return self._fetch_value(row, key)
 
     def _output(self, df_json, filename, primary_key):
         output_filename = f'{self.destination}/{filename}.csv'
