@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 
-
 # DIR_PATH = os.path.join(os.path.basename(os.getcwd()),'mapping_parser')
 # mapping_source = os.path.join(DIR_PATH, 'mapping.json')
 # with open('mapping_parser/mapping.json') as f:
@@ -10,7 +9,7 @@ with open('/code/src/mapping_parser/mapping.json') as f:
     MAPPING = json.load(f)
 
 
-class MappingParser():
+class MappingParser:
     def __init__(self, destination, endpoint, incremental=False, mapping=None):
 
         self.destination = destination
@@ -83,9 +82,9 @@ class MappingParser():
 
     @staticmethod
     def _fetch_value(row, key):
-        '''
+        """
         Fetching value from a nested object
-        '''
+        """
         key_list = key.split('.')
         value = row
 
@@ -97,6 +96,9 @@ class MappingParser():
             value = ''
 
         return value
+
+    def fetch_value(self, row, key):
+        return self._fetch_value(row, key)
 
     def _output(self, df_json, filename, primary_key):
         output_filename = f'{self.destination}/{filename}.csv'

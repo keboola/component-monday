@@ -86,10 +86,10 @@ class Monday:
 
         return temp_body
 
-    def fetch(self, endpoint, MappingParser, additional_parameters=None):
+    def fetch(self, endpoint, mapping_parser, additional_parameters=None):
+        iterator = True
 
         # request parameters
-        iterator = True
         body = self.fetch_query(endpoint)
 
         # query parameters
@@ -97,14 +97,19 @@ class Monday:
             'page': 1,
             'limit': 200
         }
+
         if additional_parameters:
             for i in additional_parameters:
                 pagination_parameters[i] = additional_parameters[i]
 
         while iterator:
 
-            logging.info(
-                f'Processing [{endpoint}] - Page {pagination_parameters["page"]}')
+            # check if query has pagination
+            if '{{page}}' not in body:
+                logging.debug(f'Pagination NOT detected for [{endpoint}], will only fetch first page.')
+                iterator = False
+
+            logging.info(f'Processing [{endpoint}] - Page {pagination_parameters["page"]}')
 
             request_body = self._construct_query(body, pagination_parameters)
 
@@ -114,25 +119,20 @@ class Monday:
 
             logging.debug(f"Response: {data_in}")
 
-            endpoint_data_in = MappingParser._fetch_value(data_in, MONDAY_ENDPOINT_CONFIGS[endpoint]['dataType'])
+            endpoint_data_in = mapping_parser.fetch_value(data_in, MONDAY_ENDPOINT_CONFIGS[endpoint]['dataType'])
 
             # Pagination settings
-
-            # if endpont does not have page in query, then stop iteration
-            if not request_body['query'].find('page'):
-                iterator = False
+            if endpoint == 'activity_logs':
+                endpoint_data_in_len = 0
+                for i in endpoint_data_in:
+                    endpoint_data_in_len += len(i['activity_logs'])
             else:
-                if endpoint == 'activity_logs':
-                    endpoint_data_in_len = 0
-                    for i in endpoint_data_in:
-                        endpoint_data_in_len += len(i['activity_logs'])
-                else:
-                    endpoint_data_in_len = len(endpoint_data_in)
+                endpoint_data_in_len = len(endpoint_data_in)
 
-                if endpoint_data_in_len > 0:
-                    MappingParser.parse(endpoint_data=endpoint_data_in)
+            if endpoint_data_in_len > 0:
+                mapping_parser.parse(endpoint_data=endpoint_data_in)
 
-                    # adjust pagination parameters
-                    pagination_parameters['page'] += 1
-                else:
-                    iterator = False
+                # adjust pagination parameters
+                pagination_parameters['page'] += 1
+            else:
+                iterator = False
