@@ -39,7 +39,7 @@ MONDAY_ENDPOINT_CONFIGS = {
 }
 
 
-class Monday():
+class Monday:
     def __init__(self, api_token):
         self.API_TOKEN = api_token
 
@@ -110,30 +110,29 @@ class Monday():
 
             logging.debug(f"request_body: {request_body}")
 
-            data_in = self.post_request(
-                url=MONDAY_URL,
-                api_token=self.API_TOKEN,
-                body=request_body)
+            data_in = self.post_request(url=MONDAY_URL, api_token=self.API_TOKEN, body=request_body)
 
             logging.debug(f"Response: {data_in}")
 
-            endpoint_data_in = MappingParser._fetch_value(
-                data_in,
-                MONDAY_ENDPOINT_CONFIGS[endpoint]['dataType'])
+            endpoint_data_in = MappingParser._fetch_value(data_in, MONDAY_ENDPOINT_CONFIGS[endpoint]['dataType'])
 
             # Pagination settings
-            if endpoint == 'activity_logs':
-                endpoint_data_in_len = 0
-                for i in endpoint_data_in:
-                    endpoint_data_in_len += len(i['activity_logs'])
-            else:
-                endpoint_data_in_len = len(endpoint_data_in)
 
-            if endpoint_data_in_len > 0:
-                MappingParser.parse(endpoint_data=endpoint_data_in)
-
-                # adjust pagination parameters
-                pagination_parameters['page'] += 1
-
-            else:
+            # if endpont does not have page in query, then stop iteration
+            if not request_body['query'].find('page'):
                 iterator = False
+            else:
+                if endpoint == 'activity_logs':
+                    endpoint_data_in_len = 0
+                    for i in endpoint_data_in:
+                        endpoint_data_in_len += len(i['activity_logs'])
+                else:
+                    endpoint_data_in_len = len(endpoint_data_in)
+
+                if endpoint_data_in_len > 0:
+                    MappingParser.parse(endpoint_data=endpoint_data_in)
+
+                    # adjust pagination parameters
+                    pagination_parameters['page'] += 1
+                else:
+                    iterator = False
